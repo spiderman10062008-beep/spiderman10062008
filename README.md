@@ -1,52 +1,167 @@
-# 🕸️ Spidey-Sense
+<!-- HEADER BANNER -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:E23636,50:B22222,100:1E3A8A&height=240&section=header&text=SPIDEY-SENSE&fontSize=64&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Your%20Friendly%20Neighborhood%20Guardian%20of%20the%20Digital%20World&descAlignY=60&descSize=18" width="100%" alt="Spidey-Sense banner"/>
 
-> *With great power comes great responsibility, and safe passwords.*
+<div align="center">
 
-A friendly neighborhood guardian that protects people in the **digital world**.
-It detects **phishing links** and **weak passwords**, then tells you how to stay safe.
+<!-- TYPING ANIMATION -->
+<a href="#">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=E23636&center=true&vCenter=true&width=700&lines=%F0%9F%95%B7%EF%B8%8F+My+Spidey-Sense+is+tingling...;%F0%9F%8E%A3+Phishing+link+detected!;%F0%9F%94%91+Weak+password+found!;%F0%9F%9B%A1%EF%B8%8F+Saving+the+digital+world+one+click+at+a+time" alt="Typing animation"/>
+</a>
 
-![banner](assets/banner.svg)
+<br/>
 
-**Subject domain:** Cybersecurity awareness & online safety.
+![Python](https://img.shields.io/badge/Python-3.8+-1E3A8A?style=for-the-badge&logo=python&logoColor=white)
+![Cybersecurity](https://img.shields.io/badge/Domain-Cybersecurity-E23636?style=for-the-badge&logo=hackthebox&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-1E3A8A?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-E23636?style=for-the-badge)
 
-![how it works](assets/how-it-works.svg)
+<br/>
+
+> ### *"With great power comes great responsibility... and safe passwords."*
+
+</div>
 
 ---
 
-## 🚀 How to use this README (copy-paste setup)
+## 🕸️ Mission Briefing
 
-All the code is inside this file. Create the files below (same names and folders), paste each code block in, and you're done.
+Spidey-Sense is a friendly neighborhood guardian that **protects everyday people in the digital world**.
+When danger is near, it tingles, analyzes the threat and tells you exactly how to stay safe.
 
+<table>
+<tr>
+<td width="50%" align="center">
+
+### 🎣 Phishing Radar
+Scans links for fake-login tricks, raw IPs, hidden `@` redirects, bait words and shady domains.
+
+</td>
+<td width="50%" align="center">
+
+### 🔑 Password Shield
+Checks strength, length, variety and common-password lists, then gives clear tips.
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+### ⚡ Instant Results
+Simple command line. Type a command, get a verdict in under a second.
+
+</td>
+<td align="center">
+
+### 🧠 Explainable
+Every warning comes with the *reason*, so people learn to spot scams themselves.
+
+</td>
+</tr>
+</table>
+
+**Subject domain:** Cybersecurity awareness and online safety.
+
+---
+
+## 🕷️ How the Web Works
+
+```mermaid
+flowchart LR
+    A([🕷️ Spidey-Sense<br/>tingles]):::red --> B{🔍 Analyze}:::blue
+    B -->|URL rules| C[🎣 Phishing score]:::blue
+    B -->|Password rules| D[🔑 Strength score]:::blue
+    C --> E([🛡️ Rescue:<br/>verdict + safety tips]):::red
+    D --> E
+    classDef red fill:#E23636,stroke:#fff,color:#fff,stroke-width:2px
+    classDef blue fill:#1E3A8A,stroke:#fff,color:#fff,stroke-width:2px
 ```
-spidey-sense/
-├── README.md
-├── spidey_sense/
-│   ├── __init__.py
-│   ├── __main__.py
-│   ├── phishing.py
-│   ├── passwords.py
-│   └── cli.py
-├── tests/
-│   └── test_spidey.py
-└── assets/
-    ├── banner.svg
-    ├── logo.svg
-    └── how-it-works.svg
+
+### 🚦 Threat Levels
+
+| Level | Meaning | What to do |
+|:-----:|---------|------------|
+| 🟢 **SAFE** | No warning signs found | Proceed normally |
+| 🟠 **SUSPICIOUS** | A few red flags | Double-check the sender and site |
+| 🔴 **DANGER** | Strong phishing signs | Do **not** click or enter any details |
+
+---
+
+## 📺 Live Demo (sample output)
+
+```text
+$ python -m spidey_sense url "http://192.168.1.5/secure-login/verify@bank.xyz"
+
+🔴 DANGER (threat score 10)
+  • Not using HTTPS
+  • Uses a raw IP address instead of a domain
+  • Contains '@' (can hide the real destination)
+  • Bait words: login, verify, secure, bank
 ```
 
-Run it:
+```text
+$ python -m spidey_sense url "http://mysite.com/login"
+
+🟠 SUSPICIOUS (threat score 3)
+  • Not using HTTPS
+  • Bait words: login
+```
+
+```text
+$ python -m spidey_sense url "https://github.com"
+
+🟢 SAFE (threat score 0)
+```
+
+```text
+$ python -m spidey_sense password "password"
+
+🔴 WEAK (0/5)
+  • This is a very common password
+```
+
+```text
+$ python -m spidey_sense password "Web!Sling3r#Night42"
+
+🟢 STRONG (4/5)
+```
+
+---
+
+## 🚀 Quick Start
 
 ```bash
-python -m spidey_sense url "http://192.168.1.5/secure-login/verify@bank.xyz"
-python -m spidey_sense password "Web!Sling3r#Night42"
-python -m unittest discover tests
+# 1. Get the code
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+
+# 2. Scan a link
+python -m spidey_sense url "http://example.com/login"
+
+# 3. Check a password
+python -m spidey_sense password "MyP@ssw0rd"
+```
+
+> 💡 **No computer?** Open the repo, click **Code → Codespaces → Create codespace** and run the commands online for free.
+
+### 📁 Project Structure
+
+```text
+spidey-sense/
+├── 🕸️ spidey_sense/
+│   ├── __init__.py      # package entry
+│   ├── __main__.py      # python -m spidey_sense
+│   ├── phishing.py      # 🎣 link analyzer
+│   ├── passwords.py     # 🔑 password checker
+│   └── cli.py           # ⌨️ command line
+└── 📄 README.md
 ```
 
 ---
 
-## 🐍 Code
+## 🐍 Source Code
 
-### `spidey_sense/__init__.py`
+<details>
+<summary>🕸️ <b>spidey_sense/__init__.py</b></summary>
 
 ```python
 """Spidey-Sense: a friendly neighborhood guardian for the digital world."""
@@ -56,15 +171,19 @@ from .passwords import check_password
 __all__ = ["check_url", "check_password"]
 __version__ = "0.1.0"
 ```
+</details>
 
-### `spidey_sense/__main__.py`
+<details>
+<summary>🕸️ <b>spidey_sense/__main__.py</b></summary>
 
 ```python
 from .cli import main
 main()
 ```
+</details>
 
-### `spidey_sense/phishing.py`
+<details>
+<summary>🎣 <b>spidey_sense/phishing.py</b></summary>
 
 ```python
 """Heuristic phishing-link detection (educational, not a replacement for real security tools)."""
@@ -107,8 +226,10 @@ def check_url(url: str) -> dict:
     level = "SAFE" if score <= 1 else "SUSPICIOUS" if score <= 3 else "DANGER"
     return {"url": url, "score": score, "level": level, "reasons": reasons}
 ```
+</details>
 
-### `spidey_sense/passwords.py`
+<details>
+<summary>🔑 <b>spidey_sense/passwords.py</b></summary>
 
 ```python
 """Password strength checker."""
@@ -141,8 +262,10 @@ def check_password(pw: str) -> dict:
     level = "WEAK" if score <= 1 else "OKAY" if score <= 3 else "STRONG"
     return {"score": score, "level": level, "tips": tips}
 ```
+</details>
 
-### `spidey_sense/cli.py`
+<details>
+<summary>⌨️ <b>spidey_sense/cli.py</b></summary>
 
 ```python
 """Command line: `python -m spidey_sense url <link>` or `password`."""
@@ -177,119 +300,33 @@ def main(argv=None):
 if __name__ == "__main__":
     main()
 ```
-
-### `tests/test_spidey.py`
-
-```python
-import unittest
-from spidey_sense import check_url, check_password
-
-
-class TestSpidey(unittest.TestCase):
-    def test_safe_url(self):
-        self.assertEqual(check_url("https://github.com")["level"], "SAFE")
-
-    def test_phishing_url(self):
-        r = check_url("http://192.168.1.5/secure-login/verify@bank.xyz")
-        self.assertEqual(r["level"], "DANGER")
-
-    def test_weak_password(self):
-        self.assertEqual(check_password("password")["level"], "WEAK")
-
-    def test_strong_password(self):
-        self.assertEqual(check_password("Web!Sling3r#Night42")["level"], "STRONG")
-
-
-if __name__ == "__main__":
-    unittest.main()
-```
-
----
-
-## 🖼️ Images (original artwork, save as `.svg` files)
-
-### `assets/banner.svg`
-
-```xml
-<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0b1026"/><stop offset="1" stop-color="#2a0f3d"/>
-    </linearGradient>
-  </defs>
-  <rect width="900" height="300" fill="url(#sky)"/>
-  <g font-family="monospace" font-size="14" fill="#1fe0c5" opacity=".25">
-    <text x="20" y="40">01001000 01100101 01101100 01110000</text>
-    <text x="520" y="70">10110 01101 00111 11010 01011</text>
-    <text x="60" y="110">0110 1001 1100 0011 1010</text>
-    <text x="600" y="130">11001 00110 10101 01100</text>
-  </g>
-  <g fill="#10163a" stroke="#1fe0c5" stroke-opacity=".5">
-    <rect x="30" y="170" width="70" height="130"/><rect x="110" y="140" width="60" height="160"/>
-    <rect x="180" y="190" width="80" height="110"/><rect x="620" y="150" width="70" height="150"/>
-    <rect x="700" y="180" width="60" height="120"/><rect x="770" y="130" width="90" height="170"/>
-  </g>
-  <g stroke="#e8f1ff" stroke-width="1.2" fill="none" opacity=".7">
-    <path d="M450 0 L450 90"/><path d="M450 90 L330 150"/><path d="M450 90 L570 150"/>
-    <path d="M450 90 L390 40"/><path d="M450 90 L510 40"/>
-    <ellipse cx="450" cy="90" rx="40" ry="26"/><ellipse cx="450" cy="90" rx="80" ry="52"/>
-  </g>
-  <circle cx="450" cy="120" r="46" fill="#d7263d"/>
-  <path d="M415 112 Q430 95 447 118 Q438 134 415 128Z" fill="#fff" stroke="#111" stroke-width="3"/>
-  <path d="M485 112 Q470 95 453 118 Q462 134 485 128Z" fill="#fff" stroke="#111" stroke-width="3"/>
-  <text x="450" y="230" text-anchor="middle" font-family="Arial Black, Arial" font-size="46" fill="#fff">SPIDEY-SENSE</text>
-  <text x="450" y="262" text-anchor="middle" font-family="Arial" font-size="18" fill="#1fe0c5">Your friendly neighborhood guardian of the digital world</text>
-</svg>
-```
-
-### `assets/logo.svg`
-
-```xml
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="100" cy="100" r="96" fill="#0b1026" stroke="#d7263d" stroke-width="6"/>
-  <g stroke="#e8f1ff" stroke-width="1.5" fill="none" opacity=".6">
-    <path d="M100 4V196M4 100H196M32 32L168 168M168 32L32 168"/>
-    <circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="58"/><circle cx="100" cy="100" r="86"/>
-  </g>
-  <circle cx="100" cy="100" r="40" fill="#d7263d"/>
-  <path d="M72 94 Q84 80 98 100 Q90 114 72 108Z" fill="#fff" stroke="#111" stroke-width="3"/>
-  <path d="M128 94 Q116 80 102 100 Q110 114 128 108Z" fill="#fff" stroke="#111" stroke-width="3"/>
-</svg>
-```
-
-### `assets/how-it-works.svg`
-
-```xml
-<svg viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg" font-family="Arial" text-anchor="middle">
-  <rect width="800" height="180" fill="#0b1026" rx="12"/>
-  <g fill="#1b2150" stroke="#1fe0c5" stroke-width="2">
-    <rect x="30" y="50" width="200" height="80" rx="10"/>
-    <rect x="300" y="50" width="200" height="80" rx="10"/>
-    <rect x="570" y="50" width="200" height="80" rx="10"/>
-  </g>
-  <g fill="#fff" font-size="16">
-    <text x="130" y="85">1. Sense</text><text x="130" y="108" font-size="13" fill="#1fe0c5">spot a threat</text>
-    <text x="400" y="85">2. Analyze</text><text x="400" y="108" font-size="13" fill="#1fe0c5">URL / password rules</text>
-    <text x="670" y="85">3. Rescue</text><text x="670" y="108" font-size="13" fill="#1fe0c5">score + safety tips</text>
-  </g>
-  <g stroke="#d7263d" stroke-width="3" fill="#d7263d">
-    <path d="M232 90H296"/><path d="M296 90l-10-6v12z"/>
-    <path d="M502 90H566"/><path d="M566 90l-10-6v12z"/>
-  </g>
-</svg>
-```
+</details>
 
 ---
 
 ## 🗺️ Roadmap
-- [ ] Check passwords against breach lists (k-anonymity)
+
+- [x] Phishing link scanner
+- [x] Password strength checker
+- [ ] Check passwords against breach lists (safely)
 - [ ] Browser extension for live link scanning
 - [ ] Email header analyzer
 - [ ] Web dashboard
 
 ## ⚠️ Disclaimer
+
 Heuristic, educational project, not a substitute for professional security tools.
-Unofficial fan-inspired project, not affiliated with Marvel or Disney. All artwork is original.
+Unofficial fan-inspired project, not affiliated with Marvel or Disney. All artwork here is original.
 
 ## 📄 License
-MIT
+
+Released under the **MIT License**.
+
+<div align="center">
+
+### 🕷️ *Stay safe out there, web-slinger.*
+
+</div>
+
+<!-- FOOTER BANNER -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E3A8A,50:B22222,100:E23636&height=120&section=footer" width="100%" alt="footer"/>
